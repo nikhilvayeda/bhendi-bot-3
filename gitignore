@@ -1,2 +1,4 @@
 virtual_env
 __pycache__
+*.cpython-37
+*.pyc
