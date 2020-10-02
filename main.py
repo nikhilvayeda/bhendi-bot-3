@@ -48,9 +48,16 @@ async def unload(ctx, extension=None):
 
 
 # To reload cogs
+@client.command()
 async def reload(ctx, extension=None):
-    await load(ctx, extension)
     await unload(ctx, extension)
+    await load(ctx, extension)
+
+
+# This will block all the dms
+@client.check
+async def globally_block_dms(ctx):
+    return ctx.guild is not None
 
 
 # Loading all the cogs in the starting
