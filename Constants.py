@@ -9,7 +9,7 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 PREFIX = "="
 DEVS_IDS = [669861531034583060]
-ALL_EXTENSIONS = ["_help", "moderation"]
+ALL_EXTENSIONS = ["_help", "ban", "kick", "mute_unmute", "purge", "unban"]
 
 SUB_COMMANDS_TEXT = {
     "Fun" :
@@ -20,7 +20,8 @@ SUB_COMMANDS_TEXT = {
     "Moderation" :
         {
             "ban" : f"Bans a member.\nUse : ```{PREFIX}ban [USER]```",
-            "kick" : f"Kicks a member from the server.\nUser : ```{PREFIX}kick [USER]```"
+            "kick" : f"Kicks a member from the server.\nUser : ```{PREFIX}kick [USER]```",
+            "purge" : "Purges messages.\nUser `=help purge` to see a full help."
         },
 
     "Utility" :
