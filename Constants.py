@@ -11,6 +11,8 @@ PREFIX = "="
 DEVS_IDS = [669861531034583060]
 ALL_EXTENSIONS = ["_help", "ban", "kick", "mute_unmute", "purge", "unban"]
 
+TEST_ACCOUNT = "@SaimanSays#3455"
+
 SUB_COMMANDS_TEXT = {
     "Fun" :
         {
@@ -20,6 +22,7 @@ SUB_COMMANDS_TEXT = {
     "Moderation" :
         {
             "ban" : f"Bans a member.\nUse : ```{PREFIX}ban [USER]```",
+            "unban" : f"Unbans a member.\nUse : ```{PREFIX}unban [USER]```",
             "kick" : f"Kicks a member from the server.\nUser : ```{PREFIX}kick [USER]```",
             "purge" : "Purges messages.\nUser `=help purge` to see a full help."
         },
@@ -31,6 +34,35 @@ SUB_COMMANDS_TEXT = {
 
 }
 
+SUB_SUB_COMMANDS_TEXT = {
+    "insult" : {
+        "insult" : f"Incase you want to get roasted.",
+    },
+
+    "ban" : {
+        "ban [USER]" : f"Bans a member.\nExample : ```{PREFIX}ban {TEST_ACCOUNT}```"
+    },
+
+    "unban" : {
+        "unban [USER]" : f"Unbans a banned member.\nExample : ```{PREFIX}unban {TEST_ACCOUNT}```"
+    },
+
+    "kick" : {
+        "kick [USER]" : f"kicks a member from the server.\nExample : ```{PREFIX}kick {TEST_ACCOUNT}```"
+    },
+
+    "purge" : {
+        "purge [AMOUNT]" : f"Purges the given amount of messages.\nExample : ```{PREFIX}purge 100```",
+        "purge bot [AMOUNT]" : f"Purges the given amount of messages if the message is by a bot.\nExample : ```{PREFIX}purge bot 100```",
+        "purge human [AMOUNT]" : f"Purges the given amount of messages if the message is by a human.\nExample : ```{PREFIX}purge human 100```",
+        "purge user [USER] [AMOUNT]" : f"Purges the given amount of messages if the message is by the user provided.\nExample : ```{PREFIX}purge user {TEST_ACCOUNT} 100```"
+    },
+
+    "av" : {
+        "av" : f"See your profile picture.\nExample : ```{PREFIX}av```",
+        "av [USER]" : f"See a user's profile picture.\nExample : ```{PREFIX} {TEST_ACCOUNT}```"
+    }
+}
 
 # Server Specific constants
 SERVER_ID = 722336877524418620
