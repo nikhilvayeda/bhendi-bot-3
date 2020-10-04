@@ -55,7 +55,11 @@ SUB_SUB_COMMANDS_TEXT = {
         "purge [AMOUNT]" : f"Purges the given amount of messages.\nExample : ```{PREFIX}purge 100```",
         "purge bot [AMOUNT]" : f"Purges the given amount of messages if the message is by a bot.\nExample : ```{PREFIX}purge bot 100```",
         "purge human [AMOUNT]" : f"Purges the given amount of messages if the message is by a human.\nExample : ```{PREFIX}purge human 100```",
-        "purge user [USER] [AMOUNT]" : f"Purges the given amount of messages if the message is by the user provided.\nExample : ```{PREFIX}purge user {TEST_ACCOUNT} 100```"
+        "purge user [USER] [AMOUNT]" : f"Purges the given amount of messages if the message is by the user provided.\nExample : ```{PREFIX}purge user {TEST_ACCOUNT} 100```",
+        "purge embeds [AMOUNT]" : f"Purges the given amount of messages if it contains any embeds.\nExample : ```{PREFIX}purge embeds 100```",
+        "purge images [AMOUNT]" : f"Purges the given amount of messages if it contains any attachments.\nExample : ```{PREFIX}purge images 100```",
+        "purge mentions [AMOUNT]" : f"Purges the given amount of messages if it contains any role or user mentions.\nExample : ```{PREFIX}purge mentions 100```",
+        "purge links [AMOUNT]" : f"Purges the given amount of messages if it contains any links.\nExample : ```{PREFIX}purge links 100```"
     },
 
     "av" : {
