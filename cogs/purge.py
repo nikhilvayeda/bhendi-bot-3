@@ -54,6 +54,7 @@ class Moderation_purge(commands.Cog):
                 return False
 
             await ctx.send(f"Deleted {len(_deleted) - 1} messages.", delete_after=3.0)
+            return True
 
 
         # Purging messages: if by humans
@@ -61,11 +62,42 @@ class Moderation_purge(commands.Cog):
             try:
                 await ctx.message.delete()
                 _deleted = await ctx.channel.purge(limit=_number, check=self.check_human)
+
             except:
                 await ctx.send("Failed to delete messages.")
                 return False
 
             await ctx.send(f"Deleted {len(_deleted)} messages.", delete_after=3.0)
+            return True
+
+        # Purging messages: by a certain user
+        elif args[0] == "user":
+            if len(args) == 3:
+                try:
+                    member_id = int(args[1][:-1][2:])
+                    member = ctx.guild.get_member(member_id)
+
+                    if member:
+                        try:
+                            self.deleting_member = member
+                            await ctx.message.delete()
+                            _deleted = await ctx.channel.purge(limit=_number, check=self.check_user)
+
+                        except Exception as e:
+                            print(e)
+                            await ctx.send(f"Failed to delete messages.")
+                            return False
+
+                        await ctx.send(f"Deleted {len(_deleted)} messages by {member}", delete_after=3.0)
+                        return True
+
+
+                except:
+                    await ctx.send(f"Please provide a valid user.")
+                    return False
+
+            await ctx.send(f"Please provide a valid user.")
+            return False
 
         else:
             await ctx.send(f"wdym by **{args[0]}**??\nUse  `{PREFIX}help purge`")
@@ -76,6 +108,9 @@ class Moderation_purge(commands.Cog):
 
     def check_human(self, _m):
         return not _m.author.bot
+
+    def check_user(self, m):
+        return self.deleting_member.id == m.author.id
 
 def setup(client):
     client.add_cog(Moderation_purge(client))
