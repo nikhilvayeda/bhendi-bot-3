@@ -108,7 +108,10 @@ class Moderation_mute_unmute(commands.Cog):
         # Unmuting muted members if the time has arrived.
         for muted_member in self.muted_members:
             if time.perf_counter() - muted_member["time"] >= muted_member["for"]:
-                await muted_member["member"].remove_roles(self.mute_role)
+                try:
+                    await muted_member["member"].remove_roles(self.mute_role)
+                except:
+                    pass
                 self.muted_members.remove(muted_member)
 
 
