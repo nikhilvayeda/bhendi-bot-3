@@ -228,4 +228,3 @@ class Moderation_purge(commands.Cog):
 
 def setup(client):
     client.add_cog(Moderation_purge(client))
-
