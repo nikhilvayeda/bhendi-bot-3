@@ -7,6 +7,7 @@ class Moderation_purge(commands.Cog):
         self.client = client
 
     @commands.command()
+    @commands.has_permissions(manage_messages=True)
     async def purge(self, ctx, *args):
         '''Purge Messages'''
 
@@ -65,7 +66,6 @@ class Moderation_purge(commands.Cog):
                 return False
 
             await ctx.send(f"Deleted {len(_deleted)} messages.", delete_after=3.0)
-
 
         else:
             await ctx.send(f"wdym by **{args[0]}**??\nUse  `{PREFIX}help purge`")
