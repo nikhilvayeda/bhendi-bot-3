@@ -9,7 +9,7 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 PREFIX = "="
 DEVS_IDS = [669861531034583060]
-ALL_EXTENSIONS = ["_help", "ban", "kick", "mute_unmute", "purge", "unban", "leveledroles"]
+ALL_EXTENSIONS = ["_help", "ban", "kick", "mute_unmute", "purge", "unban", "av"]
 
 DATABASE_REPO_NAME = "bhendi-bot-data"
 DATABASE_FILENAME = "ALL_DATA.json"
@@ -111,5 +111,4 @@ ROLE_IDS = {
     "BUTTON_CHOR" : 722351250326290453,
     "SAY_SENA" : 722338517329641493,
     "EDGY_PASS" : 730466271027789856
-
 }
