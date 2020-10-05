@@ -29,9 +29,13 @@ class Moderation_mute_unmute(commands.Cog):
         try:
             member_id = int(_member[:-1][2:])
             member = ctx.guild.get_member(member_id)
+
             if member == None:
-                await ctx.send(f"No member as **'{_member}'** was found.")
-                return False
+                member = ctx.guild.get_member(int(_member))
+
+                if member == None:
+                    await ctx.send(f"No member as **'{_member}'** was found.")
+                    return False
 
         except:
             await ctx.send("Please provide a valid member.")
@@ -82,9 +86,13 @@ class Moderation_mute_unmute(commands.Cog):
         try:
             member_id = int(_member[:-1][2:])
             member = ctx.guild.get_member(member_id)
+
             if member == None:
-                await ctx.send(f"No member as **'{_member}'** was found.")
-                return False
+                member = ctx.guild.get_member(int(_member))
+
+                if member == None:
+                    await ctx.send(f"No member as **'{_member}'** was found.")
+                    return False
 
         except:
             await ctx.send("Please provide a valid member.")

@@ -19,6 +19,13 @@ class Moderation_ban(commands.Cog):
             member_id = int(_member[:-1][2:])
             member = ctx.guild.get_member(member_id)
 
+            if member == None:
+                try:
+                    member = ctx.guild.get_member(int(_member))
+                except:
+                    await ctx.send("Please provide a valid member")
+                    return False
+
             if member:
                 try:
                     await member.ban(reason=_reason)

@@ -18,7 +18,12 @@ class Utility_av(commands.Cog):
             return True
 
         else:
-            member_id = int(user[:-1][2:])
+            try:
+                member_id = int(user[:-1][2:])
+            except:
+                await ctx.send("Please enter a valid user.")
+                return False
+
             member = ctx.guild.get_member(member_id)
 
             if member:
@@ -29,7 +34,12 @@ class Utility_av(commands.Cog):
                 return True
 
             else:
-                member = ctx.guild.get_member(int(user))
+                try:
+                    member = ctx.guild.get_member(int(user))
+                except:
+                    await ctx.send("Please enter a valid user.")
+                    return False
+
                 if member:
                     _embed = discord.Embed(title=f"{member}", color=discord.Colour.blue())
                     _embed.set_image(url=member.avatar_url)
