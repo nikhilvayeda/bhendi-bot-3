@@ -44,8 +44,7 @@ class Moderation_mute_unmute(commands.Cog):
         else:
             try:
                 _hours = float(_hours)
-            except Exception as e:
-                print(e)
+            except:
                 await ctx.send("Please provide time in numbers (hours)")
                 return False
 
