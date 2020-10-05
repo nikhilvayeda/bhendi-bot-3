@@ -142,6 +142,19 @@ class Moderation_mute_unmute(commands.Cog):
         await channel.set_permissions(self.mute_role, overwrite=overwrite)
 
 
+    @commands.Cog.listener()
+    async def on_member_join(self, member):
+        '''If a muted member leaves and joins back again'''
+
+        # Getting Mute Role
+        if self.mute_role == None:
+            self.mute_role = discord.utils.get(self.client.get_guild(consts.SERVER_ID).roles, id=consts.ROLE_IDS["MUTE_ROLE_ID"])
+
+
+        for muted_member in self.muted_members:
+            if muted_member['member'].id == member.id:
+                await member.add_roles(self.mute_role)
+
 
 def setup(client):
     client.add_cog(Moderation_mute_unmute(client))
