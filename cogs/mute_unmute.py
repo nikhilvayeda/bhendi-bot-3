@@ -43,8 +43,9 @@ class Moderation_mute_unmute(commands.Cog):
 
         else:
             try:
-                _hours = int(_hours)
-            except:
+                _hours = float(_hours)
+            except Exception as e:
+                print(e)
                 await ctx.send("Please provide time in numbers (hours)")
                 return False
 
@@ -93,6 +94,12 @@ class Moderation_mute_unmute(commands.Cog):
         try:
             await member.remove_roles(self.mute_role)
             await ctx.send(f"Unmuted {member} successfully.")
+
+            for i in self.muted_members:
+                if i["member"].id == member.id:
+                    self.muted_members.remove(i)
+                    break;
+
             return True
         except:
             await ctx.send(f"Failed to unmute {member}.")
@@ -118,6 +125,21 @@ class Moderation_mute_unmute(commands.Cog):
     @unmute_loop.before_loop
     async def before_unmute_loop(self):
         await self.client.wait_until_ready()
+
+
+    @commands.Cog.listener()
+    async def on_guild_channel_create(self, channel):
+        '''This will overwrite the permissions of mute role when a new channel is created'''
+
+        # Getting Mute Role
+        if self.mute_role == None:
+            self.mute_role = discord.utils.get(self.client.get_guild(consts.SERVER_ID).roles, id=consts.ROLE_IDS["MUTE_ROLE_ID"])
+
+
+        # Overwriting the permissions of mute role
+        overwrite = discord.PermissionOverwrite()
+        overwrite.send_messages = False
+        await channel.set_permissions(self.mute_role, overwrite=overwrite)
 
 
 
