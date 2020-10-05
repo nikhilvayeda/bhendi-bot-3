@@ -161,6 +161,7 @@ class Moderation_mute_unmute(commands.Cog):
         for muted_member in self.muted_members:
             if muted_member['member'].id == member.id:
                 await member.add_roles(self.mute_role)
+                break;
 
 
 def setup(client):
