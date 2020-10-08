@@ -42,6 +42,7 @@ class Help(commands.Cog):
         self.main_help_embed = discord.Embed(title="**__Bhendi Bot 3__**", color=discord.Colour.blue())
         self.main_help_embed.add_field(name="**Fun**", value="Simple and Fun Commands", inline=False)
         self.main_help_embed.add_field(name="**Moderation**", value="Commands for Mods", inline=False)
+        self.main_help_embed.add_field(name="**Utility**", value="Utility commands", inline=False)
         self.main_help_embed.add_field(name="**Help**", value="Incase you need help", inline=False)
 
 

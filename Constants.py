@@ -26,14 +26,15 @@ SUB_COMMANDS_TEXT = {
         {
             "ban" : f"Bans a member.\nUse : ```{PREFIX}ban [USER]```",
             "unban" : f"Unbans a member.\nUse : ```{PREFIX}unban [USER]```",
-            "kick" : f"Kicks a member from the server.\nUser : ```{PREFIX}kick [USER]```",
+            "kick" : f"Kicks a member from the server.\nUse : ```{PREFIX}kick [USER]```",
             "purge" : "Purges messages.\nUser `=help purge` to see a full help."
         },
 
     "Utility" :
         {
             "av" : f"See your or a user's profile picture.\nUse : ```{PREFIX}av```\n"\
-            f"or use : ```{PREFIX}av [USER]```"
+            f"or use : ```{PREFIX}av [USER]```",
+            "report" : f"Report something to the moderators.\nUse ```{PREFIX}report [CONTEXT]```"
         }
 
 }
@@ -78,6 +79,10 @@ SUB_SUB_COMMANDS_TEXT = {
 
         "purge links [AMOUNT]" : f"Purges the given amount of messages if it contains any links."\
         f"\nExample : ```{PREFIX}purge links 100```"
+    },
+
+    "report" : {
+        "report" : f"Report something to the moderators.\nUse ```{PREFIX}report [CONTEXT]```"
     },
 
     "av" : {
