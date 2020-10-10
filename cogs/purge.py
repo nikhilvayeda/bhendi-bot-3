@@ -24,8 +24,8 @@ class Moderation_purge(commands.Cog):
 
         _number = None
         try:
-            _number = int(args[-1]) + 1
-            if not _number in range(1, 1002):
+            _number = int(args[-1])
+            if not (_number + 1) in range(1, 1002):
                 await ctx.send("Number of messages should be in between `0` and `1000`")
                 return False
 
