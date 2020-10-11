@@ -63,6 +63,22 @@ class Utility_config(commands.Cog):
 
         await ctx.send(f"Please use this command in <#{self.commands_channels[0].id}>.")
 
+    @commands.command()
+    async def all_cogs(self, ctx):
+        if self.commands_channels == None:
+            self.commands_channels = [ctx.guild.get_channel(consts.CHANNEL_IDS["COMMANDS"]),
+            ctx.guild.get_channel(consts.CHANNEL_IDS["BOT"])]
+
+        if ctx.channel in self.commands_channels:
+            _main_str = ""
+            for i in consts.ALL_EXTENSIONS:
+                _main_str += f"{i}\n"
+
+            await ctx.send(_main_str)
+            return True
+
+        await ctx.send(f"Please use this command in <#{self.commands_channels[0].id}>.")
+
 
     def split_string(self, _string):
         if len(_string) >= 1999:
