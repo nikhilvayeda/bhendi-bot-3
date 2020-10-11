@@ -35,7 +35,17 @@ SUB_COMMANDS_TEXT = {
         {
             "av" : f"See your or a user's profile picture.\nUse : ```{PREFIX}av```\n"\
             f"or use : ```{PREFIX}av [USER]```",
-            "report" : f"Report something to the moderators.\nUse ```{PREFIX}report [CONTEXT]```"
+            "report" : f"Report something to the moderators.\nUse ```{PREFIX}report [CONTEXT]```",
+            "edited" : f"See that last 5 edited messages.\nUse : ```{PREFIX}edited``` ( Mods only )",
+            "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )"
+        },
+
+    "config" :
+        {
+            "all_channels" : "To see all the channel name with their IDs",
+            "all_roles" : "To see all the role name with their IDs",
+            "all_emojis" : "To see all the emojis with their IDs",
+            "all_cogs" : "To see all the cogs present"
         }
 
 }
@@ -50,7 +60,7 @@ SUB_SUB_COMMANDS_TEXT = {
     },
 
     "unban" : {
-        "unban [USER]" : f"Unbans a banned member.\nExample : ```{PREFIX}unban {TEST_ACCOUNT}```"
+        "unban [USER]" : f"Unbans a banned member.\nExample : ```{PREFIX}unban {TEST_ACCOUNT[1:]}```"
     },
 
     "kick" : {
@@ -89,6 +99,14 @@ SUB_SUB_COMMANDS_TEXT = {
     "av" : {
         "av" : f"See your profile picture.\nExample : ```{PREFIX}av```",
         "av [USER]" : f"See a user's profile picture.\nExample : ```{PREFIX} {TEST_ACCOUNT}```"
+    },
+
+    "edited" : {
+        "edited" : f"See that last 5 edited messages.\nUse : ```{PREFIX}edited``` ( Mods only )"
+    },
+
+    "deleted" : {
+        "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )"
     }
 }
 
