@@ -164,5 +164,11 @@ class Moderation_mute_unmute(commands.Cog):
                 break;
 
 
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        await ctx.send(f"Failed. {error}")
+
+
+
 def setup(client):
     client.add_cog(Moderation_mute_unmute(client))

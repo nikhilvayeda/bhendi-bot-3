@@ -34,5 +34,10 @@ class Moderation_unban(commands.Cog):
         return False
 
 
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        await ctx.send(f"Failed. {error}")
+
+
 def setup(client):
     client.add_cog(Moderation_unban(client))

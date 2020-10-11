@@ -44,5 +44,11 @@ class Moderation_ban(commands.Cog):
             await ctx.send("Please give a valid member.")
             return False
 
+
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        await ctx.send(f"Failed. {error}")
+
+
 def setup(client):
     client.add_cog(Moderation_ban(client))

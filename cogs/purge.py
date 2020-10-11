@@ -200,6 +200,10 @@ class Moderation_purge(commands.Cog):
             await ctx.send(f"wdym by **{args[0]}**??\nUse  `{PREFIX}help purge`")
 
 
+    @commands.Cog.listener()
+    async def on_command_error(self, ctx, error):
+        await ctx.send(f"Failed. {error}")
+
 
     def check_bot(self, _m):
         return _m.author.bot
