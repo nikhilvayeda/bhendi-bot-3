@@ -28,6 +28,7 @@ class Moderation_ban(commands.Cog):
 
             if member:
                 try:
+                    await member.send(f"You have been banned from the server **{ctx.guild}**\nReason : **{_reason}**")
                     await member.ban(reason=_reason)
                     await ctx.send(f"Banned **{member}**.\nReason : **{_reason}**")
                     return True

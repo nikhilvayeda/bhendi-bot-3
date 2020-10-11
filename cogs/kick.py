@@ -27,11 +27,12 @@ class Moderation_kick(commands.Cog):
 
             if member:
                 try:
+                    await member.send(f"You have been kicked from the server **{ctx.guild}**\nReason : **{_reason}**")
                     await member.kick(reason=_reason)
                     await ctx.send(f"Kicked **{member}**.\nReason : **{_reason}**")
                     return True
 
-                except:
+                except :
                     await ctx.send(f"Failed to kick {member}.")
                     return False
 
