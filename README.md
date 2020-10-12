@@ -12,8 +12,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/nikhilvayeda/bhendi-bot-3.svg)](https://GitHub.com/nikhilvayeda/bhendi-bot-3/issues/)
 [![GitHub issues-closed](https://img.shields.io/github/issues-closed/nikhilvayeda/bhendi-bot-3.svg)](https://GitHub.com/nikhilvayeda/bhendi-bot-3/issues?q=is%3Aissue+is%3Aclosed)
 
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/nikhilvayeda/bhendi-bot-3.svg)](https://GitHub.com/nikhilvayeda/bhendi-bot-3/pull/)
-[![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/nikhilvayeda/bhendi-bot-3.svg)](https://GitHub.com/nikhilvayeda/bhendi-bot-3/pull/)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/nikhilvayeda/bhendi-bot-3.svg)](https://github.com/nikhilvayeda/bhendi-bot-3/pulls?q=is%3Apr+is%3Aopen+)
+[![GitHub pull-requests closed](https://img.shields.io/github/issues-pr-closed/nikhilvayeda/bhendi-bot-3.svg)](https://github.com/nikhilvayeda/bhendi-bot-3/pulls?q=is%3Apr+is%3Aclosed)
 
 [![Support Server](https://img.shields.io/discord/722336877524418620.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/z3M7Q3Q)
 
