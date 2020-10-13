@@ -10,7 +10,10 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 PREFIX = "="
 DEVS_IDS = [669861531034583060]
 ALL_EXTENSIONS = ["_help", "ban", "kick", "mute_unmute", "purge", "unban", "av", "insult", "config",
-            "report", "welcome_goodbye", "reddit_memes", "member_count", "deleted_edited"]
+            "report", "welcome_goodbye", "reddit_memes", "member_count", "deleted_edited",
+            "random_replies"]
+
+SOURCE_URL = "https://github.com/nikhilvayeda/bhendi-bot-3"
 
 DATABASE_REPO_NAME = "bhendi-bot-data"
 DATABASE_FILENAME = "ALL_DATA.json"
@@ -108,6 +111,23 @@ SUB_SUB_COMMANDS_TEXT = {
     "deleted" : {
         "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )"
     }
+}
+
+RANDOM_REPLIES = {
+
+    "fuck haters" : "Ab Saiman ki baari hai",
+    "yalgaar hoe" : "Hoes mad :flushed:",
+    "carry tera baap hai" : "Ok mom",
+    "carry sabka baap hai" : "Ok mom",
+    "curry bhoi tera baap hai" : "Ok mom",
+    "keri tera baap hai" : "Ok mom",
+    "curry tera baap hai" : "Ok mom",
+    "six" : "Teri shaadi fix :joy:",
+    "pencil" : "Teri shaadi cancel :joy:",
+    "ok mom" : "Wait thats illegal",
+    "i wanna kill myself" : "**Dont do it you have more to accomplish suicide help line India 091529 87821**",
+    "chief" : "He died :pensive:",
+    "monke" : "He died :pensive:"
 }
 
 # Server Specific constants
