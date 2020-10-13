@@ -46,6 +46,8 @@ class Moderation_kick(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
+        if isinstance(error, discord.ext.commands.CommandNotFound):
+            return None
         await ctx.send(f"Failed. {error}")
 
 

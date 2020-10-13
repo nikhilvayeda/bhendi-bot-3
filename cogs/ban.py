@@ -47,7 +47,9 @@ class Moderation_ban(commands.Cog):
 
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
-        await ctx.send(f"Failed. {error}")
+        if isinstance(error, discord.ext.commands.CommandNotFound):
+            return None
+        print(f"Error in BAN. {error}")
 
 
 def setup(client):

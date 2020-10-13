@@ -41,11 +41,5 @@ class Others_member_count(commands.Cog):
     def count_total_members(self):
         return len([m for m in self.channel.guild.members if not m.bot])
 
-
-    @commands.Cog.listener()
-    async def on_command_error(self, ctx, error):
-        await ctx.send(f"Failed. {error}")
-
-
 def setup(client):
     client.add_cog(Others_member_count(client))
