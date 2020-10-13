@@ -59,6 +59,11 @@ async def reload(ctx, extension=None):
 async def globally_block_dms(ctx):
     return ctx.guild is not None
 
+# This will block all the messages by bots
+@client.check
+async def disable_bot_messages(ctx):
+    return not ctx.author.bot
+
 
 # Loading all the cogs in the starting
 for filename in os.listdir(os.path.join(os.getcwd(), "cogs")):
