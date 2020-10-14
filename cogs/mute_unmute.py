@@ -13,7 +13,7 @@ class Moderation_mute_unmute(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(manage_roles=True)
-    async def mute(self, ctx, _member=None, _hours=None, *, _reason="No reason specified."):
+    async def mute(self, ctx, _member : discord.Member=None, _hours=None, *, _reason="No reason specified."):
         '''Mute Members'''
 
         # Getting Mute Role
@@ -25,21 +25,10 @@ class Moderation_mute_unmute(commands.Cog):
             return False
 
         # Getting Member
-        member = None
-        try:
-            member_id = int(_member[:-1][2:])
-            member = ctx.guild.get_member(member_id)
-
-            if member == None:
-                member = ctx.guild.get_member(int(_member))
-
-                if member == None:
-                    await ctx.send(f"No member as **'{_member}'** was found.")
-                    return False
-
-        except:
-            await ctx.send("Please provide a valid member.")
+        if not isinstance(_member, discord.member.Member):
+            await ctx.send("Couldn't find the member")
             return False
+
 
         # Converting to Hours
         if _hours == None:
@@ -52,18 +41,15 @@ class Moderation_mute_unmute(commands.Cog):
                 await ctx.send("Please provide time in numbers (hours)")
                 return False
 
-        try:
-            await member.add_roles(self.mute_role)
-        except:
-            await ctx.send(f"Failed to mute {member.mention}")
-            return False
+        await _member.add_roles(self.mute_role)
+
 
         if _hours <= 0:
-            await ctx.send(f"Muted {member.mention} indefinitely.\nReason : **{_reason}**")
+            await ctx.send(f"Muted {_member.mention} indefinitely.\nReason : **{_reason}**")
 
         else:
-            await ctx.send(f"Muted {member.mention} for {_hours} hours.\nReason : **{_reason}**")
-            self.muted_members.append({"member" : member, "time" : time.perf_counter(), "for" : _hours*3600})
+            await ctx.send(f"Muted {_member.mention} for {_hours} hours.\nReason : **{_reason}**")
+            self.muted_members.append({"member" : _member, "time" : time.perf_counter(), "for" : _hours*3600})
 
         return True
 
@@ -82,35 +68,21 @@ class Moderation_mute_unmute(commands.Cog):
             return False
 
         # Getting Member
-        member = None
-        try:
-            member_id = int(_member[:-1][2:])
-            member = ctx.guild.get_member(member_id)
-
-            if member == None:
-                member = ctx.guild.get_member(int(_member))
-
-                if member == None:
-                    await ctx.send(f"No member as **'{_member}'** was found.")
-                    return False
-
-        except:
-            await ctx.send("Please provide a valid member.")
+        if not isinstance(_member, discord.member.Member):
+            await ctx.send("Couldn't find the member")
             return False
 
-        try:
-            await member.remove_roles(self.mute_role)
-            await ctx.send(f"Unmuted {member} successfully.")
 
-            for i in self.muted_members:
-                if i["member"].id == member.id:
-                    self.muted_members.remove(i)
-                    break;
+        await _member.remove_roles(self.mute_role)
+        await ctx.send(f"Unmuted {_member} successfully.")
 
-            return True
-        except:
-            await ctx.send(f"Failed to unmute {member}.")
-            return False
+        for i in self.muted_members:
+            if i["member"].id == _member.id:
+                self.muted_members.remove(i)
+                break;
+
+        return True
+
 
 
     @tasks.loop(seconds=10.0)
