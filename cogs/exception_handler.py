@@ -54,8 +54,6 @@ class Exception_handler(commands.Cog):
             return None
 
         if isinstance(error, commands.CommandInvokeError):
-            print(dir(error))
-            print(3)
             await ctx.send(str(error.__cause__))
             return None
 
