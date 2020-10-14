@@ -9,9 +9,9 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 PREFIX = "="
 DEVS_IDS = [669861531034583060]
-ALL_EXTENSIONS = ["_help", "ban", "kick", "mute_unmute", "purge", "unban", "av", "insult", "config",
-            "report", "welcome_goodbye", "reddit_memes", "member_count", "deleted_edited", "counters",
-            "random_replies"]
+ALL_EXTENSIONS = ["exception_handler", "_help", "ban", "kick", "mute_unmute", "purge",
+            "unban", "av", "insult", "config", "report", "welcome_goodbye", "reddit_memes",
+            "member_count", "deleted_edited", "counters", "random_replies"]
 
 SOURCE_URL = "https://github.com/nikhilvayeda/bhendi-bot-3"
 
