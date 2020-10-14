@@ -7,7 +7,7 @@ class Utility_av(commands.Cog):
 
 
     @commands.command()
-    async def av(self, ctx, user=None):
+    async def av(self, ctx, user : discord.Member=None):
         '''avatar command'''
 
         if user == None:
@@ -18,34 +18,12 @@ class Utility_av(commands.Cog):
             return True
 
         else:
-            try:
-                member_id = int(user[:-1][2:])
-            except:
-                await ctx.send("Please enter a valid user.")
-                return False
-
-            member = ctx.guild.get_member(member_id)
-
-            if member:
-                _embed = discord.Embed(title=f"{member}", color=discord.Colour.blue())
-                _embed.set_image(url=member.avatar_url)
+            if isinstance(user, discord.member.Member):
+                _embed = discord.Embed(title=f"{user}", color=discord.Colour.blue())
+                _embed.set_image(url=user.avatar_url)
 
                 await ctx.send(ctx.author.mention, embed=_embed)
                 return True
-
-            else:
-                try:
-                    member = ctx.guild.get_member(int(user))
-                except:
-                    await ctx.send("Please enter a valid user.")
-                    return False
-
-                if member:
-                    _embed = discord.Embed(title=f"{member}", color=discord.Colour.blue())
-                    _embed.set_image(url=member.avatar_url)
-
-                    await ctx.send(ctx.author.mention, embed=_embed)
-                    return True
 
             await ctx.send(f"Couldn't find the user as **{user}**")
 
