@@ -200,14 +200,6 @@ class Moderation_purge(commands.Cog):
             await ctx.send(f"wdym by **{args[0]}**??\nUse  `{PREFIX}help purge`")
 
 
-    @commands.Cog.listener()
-    async def on_command_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.CommandNotFound):
-            return None
-        print(f"Error in Purge. {error}")
-
-
-
     def check_bot(self, _m):
         return _m.author.bot
 

@@ -136,12 +136,5 @@ class Moderation_mute_unmute(commands.Cog):
                 break;
 
 
-    @commands.Cog.listener()
-    async def on_command_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.CommandNotFound):
-            return None
-        print(f"Error in Mute_Unmute. {error}")
-
-
 def setup(client):
     client.add_cog(Moderation_mute_unmute(client))

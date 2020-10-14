@@ -34,13 +34,5 @@ class Moderation_unban(commands.Cog):
         return False
 
 
-    @commands.Cog.listener()
-    async def on_command_error(self, ctx, error):
-        if isinstance(error, discord.ext.commands.CommandNotFound):
-            return None
-        print(f"Error in unban. {error}")
-
-
-
 def setup(client):
     client.add_cog(Moderation_unban(client))
