@@ -40,7 +40,8 @@ SUB_COMMANDS_TEXT = {
             f"or use : ```{PREFIX}av [USER]```",
             "report" : f"Report something to the moderators.\nUse ```{PREFIX}report [CONTEXT]```",
             "edited" : f"See that last 5 edited messages.\nUse : ```{PREFIX}edited``` ( Mods only )",
-            "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )"
+            "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )",
+            "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```"
         },
 
     "config" :
@@ -110,6 +111,11 @@ SUB_SUB_COMMANDS_TEXT = {
 
     "deleted" : {
         "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )"
+    },
+
+    "total" : {
+        "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```"\
+            f"\nExample ```{PREFIX}total bruh```"
     }
 }
 
