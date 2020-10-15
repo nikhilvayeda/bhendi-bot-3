@@ -56,7 +56,7 @@ class Moderation_mute_unmute(commands.Cog):
 
     @commands.command()
     @commands.has_permissions(manage_roles=True)
-    async def unmute(self, ctx, _member=None, *, _reason="No reason specified."):
+    async def unmute(self, ctx, _member : discord.Member=None, *, _reason="No reason specified."):
         '''Unmute Members'''
 
         # Getting Mute Role
