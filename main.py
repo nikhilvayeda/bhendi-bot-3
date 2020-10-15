@@ -6,7 +6,7 @@ import Constants as consts
 
 
 # Instances
-client = commands.Bot(command_prefix=consts.PREFIX)
+client = commands.Bot(command_prefix=consts.PREFIX, case_insensitive=True)
 client.remove_command("help")
 
 
