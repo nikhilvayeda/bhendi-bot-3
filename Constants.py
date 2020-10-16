@@ -11,7 +11,7 @@ PREFIX = "="
 DEVS_IDS = [669861531034583060]
 ALL_EXTENSIONS = ["exception_handler", "_help", "ban", "kick", "mute_unmute", "purge",
             "unban", "av", "insult", "config", "report", "welcome_goodbye", "reddit_memes",
-            "member_count", "deleted_edited", "counters", "random_replies"]
+            "member_count", "deleted_edited", "counters", "random_replies", "utilities"]
 
 SOURCE_URL = "https://github.com/nikhilvayeda/bhendi-bot-3"
 
