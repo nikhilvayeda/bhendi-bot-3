@@ -11,7 +11,7 @@ PREFIX = "="
 DEVS_IDS = [669861531034583060]
 ALL_EXTENSIONS = ["exception_handler", "_help", "ban", "kick", "mute_unmute", "purge",
             "unban", "av", "insult", "config", "report", "welcome_goodbye", "reddit_memes",
-            "member_count", "deleted_edited", "counters", "random_replies"]
+            "member_count", "deleted_edited", "counters", "random_replies", "utilities"]
 
 SOURCE_URL = "https://github.com/nikhilvayeda/bhendi-bot-3"
 
@@ -41,8 +41,9 @@ SUB_COMMANDS_TEXT = {
             "report" : f"Report something to the moderators.\nUse ```{PREFIX}report [CONTEXT]```",
             "edited" : f"See that last 5 edited messages.\nUse : ```{PREFIX}edited``` ( Mods only )",
             "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )",
-            "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```"
-        },
+            "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```",
+            "ping" : f"See the bot's latency.\nUse ```{PREFIX}ping```"
+         },
 
     "config" :
         {
@@ -116,6 +117,11 @@ SUB_SUB_COMMANDS_TEXT = {
     "total" : {
         "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```"\
             f"\nExample ```{PREFIX}total bruh```"
+    }
+           
+    "ping" : {
+          "ping" : f"See the bot's latency.\Use ```{PREFIX}ping```"\
+                f"\nExample ```{PREFIX}ping```"
     }
 }
 
