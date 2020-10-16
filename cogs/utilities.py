@@ -9,15 +9,8 @@ class Utilities(commands.Cog):
         
     @commands.command()
     async def ping(self, ctx):
-      ```Shows the latency.```
-      
-        try:
-            await ctx.send(f'Latency: {round(self.client.latency * 1000)} ms')
-            
-        except Exception as e:
-            print(e)
-            await ctx.send("An Error has been logged.")
-
-
+        '''Shows the latency.'''
+        await ctx.send(f'Latency: {round(self.client.latency * 1000)} ms')  
+         
 def setup(client):
     client.add_cog(Utilities(client))
