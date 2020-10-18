@@ -197,7 +197,7 @@ class Moderation_purge(commands.Cog):
                 return False
 
         else:
-            await ctx.send(f"wdym by **{args[0]}**??\nUse  `{PREFIX}help purge`")
+            await ctx.send(f"wdym by `{args[0]}`??\nUse  `{PREFIX}help purge`")
 
 
     def check_bot(self, _m):
