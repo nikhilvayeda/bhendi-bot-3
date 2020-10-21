@@ -37,7 +37,7 @@ class Other_counters(commands.Cog):
             await ctx.send(f"Total {word} counted : {self.total_counted[str(word.lower())]}")
             return True
 
-        await ctx.send(f"No counter as {word} was found.")
+        await ctx.send(f"No counter as `{word}` was found.")
 
     def get_total_word_counted(self, word_index):
         _counter = self.counters_[word_index]
