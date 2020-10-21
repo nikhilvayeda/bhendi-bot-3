@@ -34,7 +34,7 @@ class Help(commands.Cog):
                             icon_url=ctx.author.avatar_url))
 
         else:
-            await ctx.send(f"No Sub Command such as **'{term}'** was found.")
+            await ctx.send(f"No Sub Command such as `{term}` was found.")
 
 
     def create_main_help_embed(self):

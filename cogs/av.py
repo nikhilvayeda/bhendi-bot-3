@@ -25,7 +25,7 @@ class Utility_av(commands.Cog):
                 await ctx.send(ctx.author.mention, embed=_embed)
                 return True
 
-            await ctx.send(f"Couldn't find the user as **{user}**")
+            await ctx.send(f"Couldn't find the user as `{user}`")
 
 
 def setup(client):
