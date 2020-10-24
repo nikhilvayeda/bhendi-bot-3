@@ -67,6 +67,10 @@ class Exception_handler(commands.Cog):
             await ctx.send(f"To many arguments were passed.\nUse `{consts.PREFIX}help`")
             return None
 
+        if isinstance(error, commands.BadArgument):
+            await ctx.send("Bad arguments were passed")
+            return None
+
         # ignore all other exception types, but print them to console
         print('Ignoring exception in command {}:'.format(ctx.command), file=sys.stderr)
         traceback.print_exception(type(error), error, error.__traceback__, file=sys.stderr)
