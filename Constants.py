@@ -41,7 +41,8 @@ SUB_COMMANDS_TEXT = {
             "report" : f"Report something to the moderators.\nUse ```{PREFIX}report [CONTEXT]```",
             "edited" : f"See that last 5 edited messages.\nUse : ```{PREFIX}edited``` ( Mods only )",
             "deleted" : f"See the last 5 deleted messages.\nUse : ```{PREFIX}deleted``` ( Mods only )",
-            "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```"
+            "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```",
+            "ping" : f"Current latency of the bot."
         },
 
     "config" :
@@ -116,6 +117,10 @@ SUB_SUB_COMMANDS_TEXT = {
     "total" : {
         "total" : f"See the amount of counts of a counting word.\nUse ```{PREFIX}total [WORD]```"\
             f"\nExample ```{PREFIX}total bruh```"
+    },
+
+    "ping" : {
+        "ping" : f"Current latency of the bot."
     }
 }
 
