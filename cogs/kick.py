@@ -15,7 +15,9 @@ class Moderation_kick(commands.Cog):
             return False
 
         elif isinstance(_member, discord.member.Member):
-            await _member.send(f"You have been kicked from the server **{ctx.guild}**\nReason : **{_reason}**")
+            try:
+                await _member.send(f"You have been kicked from the server **{ctx.guild}**\nReason : **{_reason}**")
+            except:pass
             await _member.kick(reason=_reason)
             await ctx.send(f"Kicked **{_member}**.\nReason : **{_reason}**")
             return True
