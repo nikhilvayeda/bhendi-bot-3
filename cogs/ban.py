@@ -16,7 +16,9 @@ class Moderation_ban(commands.Cog):
             return False
 
         elif isinstance(_member, discord.member.Member):
-            await _member.send(f"You have been banned from the server **{ctx.guild}**\nReason : **{_reason}**")
+            try:
+                await _member.send(f"You have been banned from the server **{ctx.guild}**\nReason : **{_reason}**")
+            except:pass
             await _member.ban(reason=_reason)
             await ctx.send(f"Banned **{_member}**.\nReason : **{_reason}**")
             return True
