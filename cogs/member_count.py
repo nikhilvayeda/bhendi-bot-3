@@ -15,8 +15,8 @@ class Others_member_count(commands.Cog):
         if self.channel == None:
             self.channel = self.client.get_channel(consts.CHANNEL_IDS["MEMBERS"])
 
-        await self.channel.edit(name=f"Members : {self.count_total_members()}")
-
+        _c = await self.count_total_members()
+        await self.channel.edit(name=f"Members : {_c}")
 
     @commands.Cog.listener()
     async def on_member_join(self, ctx):
@@ -25,8 +25,8 @@ class Others_member_count(commands.Cog):
         if self.channel == None:
             self.channel = self.client.get_channel(consts.CHANNEL_IDS["MEMBERS"])
 
-        await self.channel.edit(name=f"Members : {self.count_total_members()}")
-
+        _c = await self.count_total_members()
+        await self.channel.edit(name=f"Members : {_c}")
 
     @commands.Cog.listener()
     async def on_member_remove(self, ctx):
@@ -35,11 +35,16 @@ class Others_member_count(commands.Cog):
         if self.channel == None:
             self.channel = self.client.get_channel(consts.CHANNEL_IDS["MEMBERS"])
 
-        await self.channel.edit(name=f"Members : {self.count_total_members()}")
+        _c = await self.count_total_members()
+        await self.channel.edit(name=f"Members : {_c}")
 
 
-    def count_total_members(self):
-        return len([m for m in self.channel.guild.members if not m.bot])
-
+    async def count_total_members(self):
+        _count = 0
+        for i in self.channel.guild.members:
+            if not i.bot:
+                _count += 1
+        return _count
+       
 def setup(client):
     client.add_cog(Others_member_count(client))
