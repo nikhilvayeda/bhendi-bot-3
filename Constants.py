@@ -8,7 +8,7 @@ REDDIT_SECRET = os.getenv("REDDIT_SECRET")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 
 PREFIX = "="
-DEVS_IDS = [669861531034583060]
+DEVS_IDS = [669861531034583060, 460036934283296788]
 ALL_EXTENSIONS = ["exception_handler", "_help", "ban", "kick", "mute_unmute", "purge",
             "unban", "av", "insult", "config", "report", "welcome_goodbye", "reddit_memes",
             "member_count", "deleted_edited", "counters", "random_replies", "utilities"]
