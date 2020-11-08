@@ -79,7 +79,7 @@ class Utility_config(commands.Cog):
 
         await ctx.send(f"Please use this command in <#{self.commands_channels[0].id}>.")
 
-    @commands.command()
+    @commands.command(aliases=['sauce'])
     async def source(self, ctx):
         await ctx.send("Here's the repository link, fork the repo, make changes,"\
                        f"then create a pull request.\n{consts.SOURCE_URL}")
