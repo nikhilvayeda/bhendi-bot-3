@@ -72,4 +72,4 @@ for filename in os.listdir(os.path.join(os.getcwd(), "cogs")):
 
 
 # Running
-client.run(consts.BOT_TOKEN)
+client.run(consts.BOT_TOKEN, reconnect=True)
