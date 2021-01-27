@@ -20,7 +20,7 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 
-Bhendi bot is an open source Discord bot for the Say Station Discord Server
+Bhendi bot is an open source Discord bot for the Funtbaazi Discord Server
 that you can contribute to make it a better bot.
 
 [Join Say Station Discord server](https://discord.gg/z3M7Q3Q)
